@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 //
-// A helper class to generate SnackBar notifications everywhere in the app's codebase 
+// A helper class to generate SnackBar notifications everywhere in the app's codebase
 // without being limited to Scafold inherited widgets
 //
 class NotificationManager {
   static BuildContext context;
-  static Color successBackgroundColor = Colors.black; 
-  static Color errorBackgroundColor = Colors.red; 
+  static Color successBackgroundColor = Colors.black;
+  static Color errorBackgroundColor = Colors.red;
 
   static generateNewSuccessNotification(String message, {fast: false}) {
     SnackBar newNotification = SnackBar(
@@ -34,6 +34,7 @@ class NotificationManager {
         style: TextStyle(fontSize: 17),
       ),
       backgroundColor: errorBackgroundColor,
+      duration: Duration(milliseconds: fast ? 500 : 1000),
     );
 
     if (context == null) {
